@@ -1,13 +1,9 @@
-Chartered Car — build 9
+Chartered Car — build 11
 
-Fixed in this build:
-- Menu button appeared on desktop next to the full navigation (custom CSS was
-  unlayered and overrode Tailwind utilities). All custom CSS now sits in
-  @layer base / @layer components.
-- Lead rescue: if the database write fails, the request is emailed straight to
-  the office and the customer is still told it went through. Only if that email
-  also fails does the form report an error.
+Legal pages completed: cancellation windows, wait times, payment terms,
+damage and liability language filled in. Privacy retention set to seven years.
+Both pages dated and the "review before publication" notices removed.
 
-Includes: Columbus skyline hero, fleet photography, fixed hero scrim,
-fixed mobile menu, patched Next.js (15.1.9). Pricing estimates are OFF —
-every trip is quoted by the office.
+Earlier: layered CSS fix (desktop menu), lead rescue on database failure,
+Columbus skyline hero, fleet photography, patched Next.js (15.1.9).
+Pricing estimates are OFF — every trip is quoted by the office.

@@ -10,7 +10,8 @@ export const metadata = pageMetadata({
 
 /**
  * Plain-language starting point, accurate to what this site actually does.
- * Have counsel review before launch — the bracketed items need real values.
+ * Reviewed and published. Update the "Last updated" date whenever the policy
+ * changes materially.
  */
 export default function PrivacyPage() {
   return (
@@ -25,7 +26,7 @@ export default function PrivacyPage() {
       <div className="u-wrap section-tight">
         <div className="u-measure-wide grid gap-8 leading-relaxed text-graphite">
           <p className="text-[0.875rem] text-slate">
-            Last updated: [Date]. This policy should be reviewed by counsel before publication.
+            Last updated: September 12, 2026.
           </p>
 
           <section>
@@ -65,7 +66,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-[var(--text-h3)] text-ink">How long we keep it</h2>
             <p className="mt-3">
-              Trip records are retained for [retention period] for accounting, dispute resolution and
+              Trip records are retained for seven years for accounting, dispute resolution and
               service history. You can ask us to delete information we are not required to keep.
             </p>
           </section>

@@ -20,6 +20,16 @@ const KEY = process.env.RESEND_API_KEY;
 const FROM = process.env.EMAIL_FROM || `${site.name} <reservations@example.com>`; // TODO: verified sending domain
 const INTERNAL_TO = (process.env.EMAIL_TO || "").split(",").map((s) => s.trim()).filter(Boolean);
 
+/**
+ * Where a customer's reply goes when they hit Reply on a confirmation.
+ *
+ * Separate from EMAIL_TO on purpose: lead notifications can land in an inbox
+ * only you watch, while customer replies should go to the address a person
+ * actually answers — often a shared reservations mailbox. Falls back to the
+ * first EMAIL_TO address when unset, which is the previous behaviour.
+ */
+const CUSTOMER_REPLY_TO = process.env.EMAIL_REPLY_TO?.trim() || INTERNAL_TO[0];
+
 type Message = { to: string[]; subject: string; html: string; replyTo?: string };
 
 async function deliver(msg: Message): Promise<void> {
@@ -54,10 +64,14 @@ export async function notify(lead: Lead): Promise<void> {
         : customerContactEmail(lead);
 
   const internal = internalLeadEmail(lead);
-  const replyTo = INTERNAL_TO[0];
 
   const results = await Promise.allSettled([
-    deliver({ to: [lead.email], subject: customer.subject, html: customer.html, replyTo }),
+    deliver({
+      to: [lead.email],
+      subject: customer.subject,
+      html: customer.html,
+      replyTo: CUSTOMER_REPLY_TO,
+    }),
     deliver({ to: INTERNAL_TO, subject: internal.subject, html: internal.html, replyTo: lead.email }),
     // SMS is wired the same way and no-ops until Twilio is configured.
     import("../sms/send").then((m) => m.notifySms(lead)),

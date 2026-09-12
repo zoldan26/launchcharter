@@ -10,7 +10,8 @@ export const metadata = pageMetadata({
 
 /**
  * Starting point only. Cancellation windows, wait-time rules, payment terms and
- * liability language must be set by the business and reviewed by counsel.
+ * Cancellation windows, wait times and payment terms are the business's stated
+ * policy. Update this page and the "Last updated" date whenever they change.
  */
 export default function TermsPage() {
   return (
@@ -25,8 +26,7 @@ export default function TermsPage() {
       <div className="u-wrap section-tight">
         <div className="u-measure-wide grid gap-8 leading-relaxed text-graphite">
           <p className="text-[0.875rem] text-slate">
-            Last updated: [Date]. Bracketed items must be set by the business and this page reviewed
-            by counsel before publication.
+            Last updated: September 12, 2026.
           </p>
 
           <section>
@@ -41,32 +41,41 @@ export default function TermsPage() {
           <section>
             <h2 className="text-[var(--text-h3)] text-ink">Changes and cancellations</h2>
             <p className="mt-3">
-              Changes and cancellations made at least [cancellation window] before the scheduled
-              pickup are accepted without charge. Later than that, [late cancellation terms] apply.
+              Sedan and SUV reservations may be changed or cancelled without charge up to four
+              hours before the scheduled pickup. Executive Sprinter reservations, weddings and
+              event bookings require twenty-four hours. Inside those windows, half the quoted
+              fare applies. Where the vehicle has been dispatched and the passenger does not
+              appear, the full fare applies.
             </p>
           </section>
 
           <section>
             <h2 className="text-[var(--text-h3)] text-ink">Wait time</h2>
             <p className="mt-3">
-              [Complimentary wait time] is included at each pickup. Airport arrivals include
-              [airport wait time] from the actual landing time. Additional waiting is billed at
-              [wait rate].
+              Fifteen minutes of waiting is included at each pickup. Airport arrivals include
+              sixty minutes from the actual landing time, tracked from the flight rather than the
+              scheduled time, so a delayed flight does not shorten it. Waiting beyond that is
+              billed in fifteen-minute increments at the vehicle's hourly rate, quoted before
+              the trip.
             </p>
           </section>
 
           <section>
             <h2 className="text-[var(--text-h3)] text-ink">Payment</h2>
             <p className="mt-3">
-              Rates are confirmed before the trip. [Payment terms — when payment is collected, what
-              methods are accepted, how gratuity and tolls are handled.]
+              Rates are confirmed before the trip and do not change afterwards unless the trip
+              itself changes. Payment is collected after the trip is complete; corporate accounts
+              are invoiced. Tolls, parking and airport fees are added at cost. Gratuity is at your
+              discretion and is not included in a quoted rate.
             </p>
           </section>
 
           <section>
             <h2 className="text-[var(--text-h3)] text-ink">Conduct and condition of the vehicle</h2>
             <p className="mt-3">
-              Passengers are responsible for damage beyond ordinary use, billed at [damage terms].
+              Passengers are responsible for damage beyond ordinary use. A cleaning fee starting
+              at $150 applies where a vehicle needs more than routine cleaning, and repairs are
+              billed at cost.
               Drivers may end a trip where behaviour is unsafe or unlawful.
             </p>
           </section>
@@ -75,8 +84,12 @@ export default function TermsPage() {
             <h2 className="text-[var(--text-h3)] text-ink">Delays and liability</h2>
             <p className="mt-3">
               We plan generously and track flights, but we are not liable for delays caused by
-              conditions outside our control, including weather, traffic and road closures.
-              [Liability terms.]
+              conditions outside our control, including weather, traffic, road closures and
+              airport operations. Where we are at fault, our responsibility is limited to the
+              fare paid for the trip in question. We are not responsible for consequential
+              losses such as missed flights, missed connections or missed events. Personal
+              property left in a vehicle is returned where we can, but is carried at your own
+              risk.
             </p>
           </section>
 
